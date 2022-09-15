@@ -40,7 +40,7 @@ pub fn readme<'a>(env: Env<'a>, args: &[Term<'a>]) -> NifResult<Term<'a>> {
 }
 
 /// Deserializes anything from an Elixir term and subsequently serializes the result back into an Elixir term, returning it.
-#[nif]
+#[rustler::nif]
 pub fn transcode<'a>(env: Env<'a>, args: &[Term<'a>]) -> NifResult<Term<'a>> {
     tag_tuple(env, || {
         let de = Deserializer::from(args[0]);
